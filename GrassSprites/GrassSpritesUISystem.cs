@@ -1,5 +1,6 @@
 ﻿using Colossal.UI;
 using Colossal.UI.Binding;
+using Game;
 using Game.Input;
 using Game.UI;
 using Game.SceneFlow;
@@ -12,6 +13,8 @@ namespace GrassSprites {
     /// </summary>
     public partial class GrassSpritesUISystem : UISystemBase {
         public const string kBindingGroup = "GrassSprites";
+
+        public override GameMode gameMode => GameMode.GameOrEditor;
 
         private ValueBinding<bool> m_EnabledBinding;
         private ValueBinding<bool> m_PanelVisibleBinding;

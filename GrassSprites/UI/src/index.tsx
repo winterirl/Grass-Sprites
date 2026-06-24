@@ -92,7 +92,7 @@ const BrushRadiusSlider = ({ value }: { value: number }) => {
   );
 };
 
-const defaultPanelPosition = { x: 24, y: 740 };
+const defaultPanelPosition = { x: 24, y: 120 };
 
 const GrassSpritesPanel = () => {
   const enabled = useValue(enabled$);
@@ -254,8 +254,15 @@ const GrassSpritesButton = () => {
   );
 };
 
+const GrassSpritesEditorOverlay = () => (
+  <div className={styles.grassSpritesRoot}>
+    <GrassSpritesPanel />
+  </div>
+);
+
 const register: ModRegistrar = (moduleRegistry) => {
-  moduleRegistry.append("GameTopLeft", GrassSpritesButton);
+    moduleRegistry.append("GameTopLeft", GrassSpritesButton);
+    moduleRegistry.append("Editor", GrassSpritesEditorOverlay);
 };
 
 export default register;
